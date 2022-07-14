@@ -36,7 +36,7 @@
       <recent name="D:\study\project13-vuePress\vuepress-theme-knzn" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/project13-vuePress/public/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -72,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.server" />
         <item itemvalue="npm.docs:dev" />
       </list>

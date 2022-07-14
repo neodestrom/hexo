@@ -102,4 +102,7 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  - type: git
+    repo: 'https://github.com/neodestrom/hexo.git'
+  - type: git
+    repo: 'https://gitee.com/lightningstorm/Hexo.git'
