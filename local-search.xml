@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Debug</title>
+    <link href="/hexo/2022/07/14/Debug/"/>
+    <url>/hexo/2022/07/14/Debug/</url>
+    
+    <content type="html"><![CDATA[<p>在脚本中加入该代码用于按钮触发</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnGUI</span>()</span>  <br>&#123;  <br>    <span class="hljs-keyword">if</span> (GUI.Button(<span class="hljs-keyword">new</span> Rect(<span class="hljs-number">20</span>, <span class="hljs-number">40</span>, <span class="hljs-number">80</span>, <span class="hljs-number">20</span>), <span class="hljs-string">&quot;测试点这里&quot;</span>))  <br>    &#123;        <br>    Debug.Log(<span class="hljs-string">&quot;OK&quot;</span>);  <br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>常用插件下载</title>
+    <link href="/hexo/2022/07/14/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    <url>/hexo/2022/07/14/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
+    
+    <content type="html"><![CDATA[<h2 id="OpenUPM"><a href="#OpenUPM" class="headerlink" title="OpenUPM"></a>OpenUPM</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>一个类似于NPM的包下载工具,在unity根目录执行相应下载指令即可下载对应的包。</p><h3 id="使用安装"><a href="#使用安装" class="headerlink" title="使用安装"></a>使用安装</h3><p>需要安装nodejs环境<br>随后执行 <code>npm install -g openupm-cli</code>  即安装成功。</p><p>安装unity包的指令是 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>openupm add com.littlebigfun.addressable-importer<br><br></code></pre></td></tr></table></figure><h3 id="常用插件包"><a href="#常用插件包" class="headerlink" title="常用插件包"></a>常用插件包</h3><h4 id="UniRx-Reactive-Extensions-for-Unity"><a href="#UniRx-Reactive-Extensions-for-Unity" class="headerlink" title="UniRx - Reactive Extensions for Unity"></a>UniRx - Reactive Extensions for Unity</h4><p>用于 Unity 响应式 ， 类似于JS的Promise语法</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">openupm <span class="hljs-keyword">add</span> <span class="hljs-keyword">com</span>.neuecc.unirx<br></code></pre></td></tr></table></figure><h4 id="UniTask"><a href="#UniTask" class="headerlink" title="UniTask"></a>UniTask</h4><p>用于 Unity async 和 await 语句</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">openupm <span class="hljs-keyword">add</span> <span class="hljs-keyword">com</span>.cysharp.unitask<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数据持久化</title>
+    <link href="/hexo/2022/07/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <url>/hexo/2022/07/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Unity-assets-文件的创建方法"><a href="#Unity-assets-文件的创建方法" class="headerlink" title="Unity .assets 文件的创建方法"></a>Unity .assets 文件的创建方法</h3><ol><li>通过菜单的方式进行创建<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c#"><br><span class="hljs-comment">// 创建的名字叫什么  创建的菜单叫什么</span><br>[<span class="hljs-meta">CreateAssetMenu(fileName=<span class="hljs-string">&quot;x&quot;</span>,menuName=<span class="hljs-string">&quot;(custom) X&quot;</span>)</span>]  <br>[<span class="hljs-meta">System.Serializable</span>]  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">X</span> : <span class="hljs-title">ScriptableObject</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">float</span> m_a;  <br>&#125;<br><br></code></pre></td></tr></table></figure></li><li>通过代码方式进行创建<blockquote><p>这种方式需要创建的路径 和 asset对应对象的类型</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CreatLocalFile</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">where</span> <span class="hljs-title">T</span> : <span class="hljs-title">ScriptableObject</span>&gt;(<span class="hljs-params"><span class="hljs-built_in">string</span> Dirpath</span>)</span><br>&#123;<br>    <span class="hljs-keyword">if</span> (!Directory.Exists (Dirpath))<br>    &#123;<br>        Directory.CreateDirectory(Dirpath);<br>    &#125;<br>    <span class="hljs-built_in">string</span> path = Dirpath + <span class="hljs-keyword">typeof</span>(T)+ <span class="hljs-string">&quot;.asset&quot;</span>;<span class="hljs-comment">//使用类  的名字</span><br>    <span class="hljs-comment">// 关键API1</span><br>    ScriptableObject ob = ScriptableObject.CreateInstance(<span class="hljs-keyword">typeof</span>(T));<br>    <span class="hljs-keyword">if</span> (ob ==<span class="hljs-literal">null</span>)<br>    &#123;<br>        Debug.LogError(<span class="hljs-string">&quot;cant creat file：&quot;</span> + <span class="hljs-keyword">typeof</span>(T));<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>    <span class="hljs-comment">// 关键API2</span><br>        AssetDatabase.CreateAsset(ob, path);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>编辑器</title>
+    <link href="/hexo/2013/07/13/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <url>/hexo/2013/07/13/%E7%BC%96%E8%BE%91%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Inspector编辑器实现自定义样式的文字-和-加载Icon"><a href="#Inspector编辑器实现自定义样式的文字-和-加载Icon" class="headerlink" title="Inspector编辑器实现自定义样式的文字 和 加载Icon"></a>Inspector编辑器实现自定义样式的文字 和 加载Icon</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs c#"><br>[<span class="hljs-meta">CanEditMultipleObjects</span>]  <br>[<span class="hljs-meta">CustomEditor(typeof(CustomMonoBehaviour),true)</span>]<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CustomEditor</span> : <span class="hljs-title">Editor</span>&#123;<br><span class="hljs-keyword">public</span> Texture2D icon;<br><span class="hljs-keyword">public</span> GUIStyle fontStyle;<br><span class="hljs-comment">// 一般初始化的时候先取得数据</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnEnable</span>()</span>  <br>&#123;<br>icon = Resources.Load(<span class="hljs-string">&quot;&quot;</span>) <span class="hljs-keyword">as</span> Texture2D;<br>&#125;<br><br><span class="hljs-comment">//  GUI用的是 编辑器绘制语法</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnInspectorGUI</span>()</span>  <br>&#123;  <br>    CheckEditorProperties();  <br>serializedObject.Update();<br>GUILayout.BeginVertical();   <br>DrawTittleHeader();  <br>DrawGUI();  <br>GUILayout.EndVertical();  <br>serializedObject.ApplyModifiedProperties();  <br>    <br>&#125;<br><span class="hljs-comment">// 绘制标题</span><br><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">DrawTittleHeader</span>()</span>  <br>&#123;  <br>    GUILayout.BeginHorizontal();  <br>    <span class="hljs-keyword">if</span> (icon) GUILayout.Label(icon, GUIStyle.none, GUILayout.Height(<span class="hljs-number">70</span>), GUILayout.Width(<span class="hljs-number">70</span>));  <br>    GUILayout.Box(<span class="hljs-string">&quot;&quot;</span>, fontStyle);  <br>    GUILayout.EndHorizontal();  <br>&#125;<br> <span class="hljs-comment">// 自定义一个字体属性</span><br><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CheckEditorProperties</span>()</span>  <br>&#123;  <br>    <span class="hljs-keyword">if</span> (fontStyle == <span class="hljs-literal">null</span>)  <br>    &#123;        <br>    fontStyle = <span class="hljs-keyword">new</span> GUIStyle(EditorStyles.whiteLargeLabel);  <br>        fontStyle.imagePosition = ImagePosition.ImageLeft;  <br>        fontStyle.alignment = TextAnchor.UpperLeft;  <br>        fontStyle.fontSize = <span class="hljs-number">23</span>;  <br>        fontStyle.fontStyle = FontStyle.Bold;  <br>        fontStyle.wordWrap = <span class="hljs-literal">true</span>;  <br>        fontStyle.clipping =  TextClipping.Clip;  <br>    &#125;&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Unity编辑器</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
