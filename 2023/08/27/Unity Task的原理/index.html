@@ -24,7 +24,7 @@
 <meta property="og:description" content="为什么有些原生的c# 异步方法使用await后可以被转化为Unitask而不是TaskUniTask 内部实现了一些扩展方法，能够将原有的C#异步的方法转化为Unitask。这是因为Unitask对于一些特定的继承自AysncOperation的类进行了扩展，然后实现了它们内部的GetAwaiter的方法，返回的是一个自定义的Awaiter struct。而这个Awaiter就可以高效率地使用Un">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-27T05:39:46.000Z">
-<meta property="article:modified_time" content="2023-08-31T02:53:09.532Z">
+<meta property="article:modified_time" content="2023-08-31T06:51:37.332Z">
 <meta property="article:author" content="Delightening">
 <meta property="article:tag" content="article">
 <meta name="twitter:card" content="summary_large_image">
