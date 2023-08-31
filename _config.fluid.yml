@@ -456,7 +456,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://w.wallhaven.cc/full/4y/wallhaven-4ylgl0.jpg
+  banner_img: ./img/homePage.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -528,7 +528,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://w.wallhaven.cc/full/96/wallhaven-96l5xd.png
+  banner_img: ./img/postPage.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -882,7 +882,7 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://w.wallhaven.cc/full/l3/wallhaven-l3z65y.png
+  banner_img: ./img/archivePage.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -893,7 +893,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: 'https://w.wallhaven.cc/full/0w/wallhaven-0w167x.jpg'
+  banner_img: ./img/categoryPage.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -922,7 +922,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://w.wallhaven.cc/full/ne/wallhaven-ne8wrl.jpg
+  banner_img: ./img/tagPage.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -939,7 +939,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://w.wallhaven.cc/full/76/wallhaven-76jvdo.jpg
+  banner_img: ./img/aboutPage.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatarDeligtening.png
