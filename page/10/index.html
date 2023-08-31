@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Delightening">
+  <meta name="keywords" content="编程">
+  
+    <meta name="description" content="分享一些有关编程技术的内容">
+<meta property="og:type" content="website">
+<meta property="og:title" content="闪电技术分享">
+<meta property="og:url" content="https://chenhongjun.top/page/10/index.html">
+<meta property="og:site_name" content="闪电技术分享">
+<meta property="og:description" content="分享一些有关编程技术的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Delightening">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>闪电技术分享</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenhongjun.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>闪电技术分享</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/./img/homePage.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=" Delightening sharing"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/43%E5%B9%B4%20%E7%BD%97%E9%A9%AC%E5%BE%81%E6%9C%8D%E4%B8%8D%E5%88%97%E9%A2%A0/" target="_self">
+          43年 罗马征服不列颠
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/43%E5%B9%B4%20%E7%BD%97%E9%A9%AC%E5%BE%81%E6%9C%8D%E4%B8%8D%E5%88%97%E9%A2%A0/" target="_self">
+        <div>
+          公元前一世纪，不列颠和高卢存在贸易往来，在罗马攻打高卢的时候支持高卢，引起了罗马总督凯撒的注意。 凯撒在公元前55年和54年连续进攻不列颠，与不列颠签订了停战协议，随后两国之间贸易往来增多了。 公元41年，罗马皇帝被刺杀，新上任的克劳狄乌斯被近卫军拥立为皇帝，而后克劳狄为了稳定民心，发动了对不列颠的征服。公元43年，克劳狄派亲信 奥路斯·普劳提乌斯 先行征讨，他率领4万大军，分三路进攻，很快12位
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/597%E5%B9%B4%20%E5%A5%A5%E5%8F%A4%E6%96%AF%E4%B8%81%E5%85%A5%E8%8B%B1%EF%BC%9A%E5%9F%BA%E7%9D%A3%E6%95%99%E7%9A%84%E5%88%B0%E6%9D%A5%E4%B8%8E%E5%B4%9B%E8%B5%B7/" target="_self">
+          597年 奥古斯丁入英：基督教的到来与崛起
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/597%E5%B9%B4%20%E5%A5%A5%E5%8F%A4%E6%96%AF%E4%B8%81%E5%85%A5%E8%8B%B1%EF%BC%9A%E5%9F%BA%E7%9D%A3%E6%95%99%E7%9A%84%E5%88%B0%E6%9D%A5%E4%B8%8E%E5%B4%9B%E8%B5%B7/" target="_self">
+        <div>
+          公元5世纪，罗马衰落，盎格鲁撒克逊人侵袭不列颠岛，并逐渐成为主体居民。 罗马教皇 格里高利一世。他想去英国传教，随后派修道院院长奥古斯丁前往英国传教。奥古斯丁通过逐渐渗透的方式，例如将寺庙的祭拜神像替换成基督徒的十字架，耶稣画像，从而逐渐使北部的一些国王开始接受了基督教。 同时由于，盎格鲁撒克逊人刚来英国，处于一个统一的过程，也需要基督教帮助维持社会稳定。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/871%E5%B9%B4%20%E4%B8%83%E5%9B%BD%E6%97%B6%E4%BB%A3%EF%BC%9A%E9%98%BF%E5%B0%94%E5%BC%97%E9%9B%B7%E5%BE%B7%E5%A4%A7%E5%B8%9D%E7%9A%84%E8%88%9E%E5%8F%B0/" target="_self">
+          871年 七国时代：阿尔弗雷德大帝的舞台
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/871%E5%B9%B4%20%E4%B8%83%E5%9B%BD%E6%97%B6%E4%BB%A3%EF%BC%9A%E9%98%BF%E5%B0%94%E5%BC%97%E9%9B%B7%E5%BE%B7%E5%A4%A7%E5%B8%9D%E7%9A%84%E8%88%9E%E5%8F%B0/" target="_self">
+        <div>
+          公元5世纪，罗马人撤离，盎格鲁撒克逊人逐渐成为不列颠岛上的主体居民。 随后400多年的时间，他们建立起了七大王国。 公元8世纪末到9世纪初，北欧海盗维京人入侵不列颠岛，阿尔弗雷德虽屡屡受挫，但在878年，阿尔弗雷德在埃丁顿与维京人决一死战获得胜利。这一战成为英格兰抗击维京海盗的转折，从此换来了较为长时间的安定。同时，凝聚了整个英格兰王国。 公元9世纪，阿尔弗雷德大帝统一了英格兰的文化政治。他的维塞
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/BC600%E5%B9%B4%20%E5%87%AF%E5%B0%94%E7%89%B9%E4%BA%BA%E5%BC%80%E5%8F%91%E4%B8%8D%E5%88%97%E9%A2%A0%E5%B2%9B/" target="_self">
+          BC600年 凯尔特人开发不列颠岛
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/BC600%E5%B9%B4%20%E5%87%AF%E5%B0%94%E7%89%B9%E4%BA%BA%E5%BC%80%E5%8F%91%E4%B8%8D%E5%88%97%E9%A2%A0%E5%B2%9B/" target="_self">
+        <div>
+          不列颠岛的巨石阵是原住民修建的。从BC2500年，经过五十代人的努力。不列颠岛原住民属于采集狩猎文明，崇拜太阳等自然，形成了祭司，祭司成了权力最大的人。 凯尔特人是印欧语系的民族，最初生活在东欧随后一路向西，来到了奥地利，随后散布在欧洲大陆。公元前700年左右，带着铁器到了不列颠岛。凯尔特人很快融入原住民的社会，分成了很多部落，部落之间争夺土地，上百个部落而后就形成一个个的小王国。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1051%E5%B9%B4%20%E5%89%8D%E4%B9%9D%E5%B9%B4%E4%B9%8B%E5%BD%B9%EF%BC%9A%E5%AE%89%E5%80%8D%E6%B0%8F%E7%9A%84%E8%A6%86%E7%81%AD/" target="_self">
+          1051年 前九年之役：安倍氏的覆灭
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1051%E5%B9%B4%20%E5%89%8D%E4%B9%9D%E5%B9%B4%E4%B9%8B%E5%BD%B9%EF%BC%9A%E5%AE%89%E5%80%8D%E6%B0%8F%E7%9A%84%E8%A6%86%E7%81%AD/" target="_self">
+        <div>
+          1051年由于安倍氏的势力庞大起来，停止了对朝廷缴纳贡租，这个时候朝廷派陆奥守藤原登任出兵试探安倍氏。但是这场战斗由安倍的胜利结束，藤原登任只能离开了陆奥。 随后由源赖义接替他收拾烂摊子，由于当时皇帝大赦天下，赦免了安倍氏叛乱的罪状，安倍赖良也有意向修复朝廷关系，随后就和平了。 1056年，源赖义经过阿九丽川河畔在这里露营的时候，遭到袭击他们认定这是安倍氏因为藤原光贞拒绝了让她妹妹和安倍赖良儿子的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1016%E5%B9%B4%20%E8%97%A4%E5%8E%9F%E9%81%93%E9%95%BF%E4%BB%BB%E6%91%84%E6%94%BF%EF%BC%9A%E6%91%84%E5%85%B3%E6%94%BF%E6%B2%BB%E5%BB%BA%E7%AB%8B/" target="_self">
+          1016年 藤原道长任摄政：摄关政治建立
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1016%E5%B9%B4%20%E8%97%A4%E5%8E%9F%E9%81%93%E9%95%BF%E4%BB%BB%E6%91%84%E6%94%BF%EF%BC%9A%E6%91%84%E5%85%B3%E6%94%BF%E6%B2%BB%E5%BB%BA%E7%AB%8B/" target="_self">
+        <div>
+          976年，冷泉天皇继位，但是这位天皇精神不太正常，可能是日本皇室长期近亲结婚的结果。于是，权臣藤原实赖开始辅佐天皇，并很快掌握了朝廷大局，逐步让藤原氏建立起摄关政治。 摄关政治说的是摄政和关白，摄政是天皇还小的时候代替天皇行国政，关白则是等到天皇成年后辅佐天皇统理政治。这个掌管摄关政治的藤原氏，实际上掌握了日本政治实权，控制天皇的废立。 这种政治能够形成，实际上是日本对地方贵族的掌控力弱，导致地方
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1083%E5%B9%B4%20%E5%90%8E%E4%B8%89%E5%B9%B4%E4%B9%8B%E5%BD%B9%EF%BC%9A%E6%BA%90%E6%B0%8F%E5%90%8D%E9%9C%87%E5%A4%A9%E4%B8%8B/" target="_self">
+          1083年 后三年之役：源氏名震天下
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1083%E5%B9%B4%20%E5%90%8E%E4%B8%89%E5%B9%B4%E4%B9%8B%E5%BD%B9%EF%BC%9A%E6%BA%90%E6%B0%8F%E5%90%8D%E9%9C%87%E5%A4%A9%E4%B8%8B/" target="_self">
+        <div>
+          在1051年-1062年平顶安倍赖时的叛乱前九年战役中清源武则立了大功，朝廷让他做了镇守府从五位下，还将安倍氏的六个郡都赏赐给了他。 清原武则去世后，传位给了他的孙子清源真衡。此时他的兄弟有清源家衡和清源清衡。清源家衡是清原武则的儿子清源武贞再娶的而生的，清源清衡则是当时安倍氏覆灭后，清原武则将藤原经清的遗孀给了他的继子。 由于清原武则性情豪横，引起了族内很多人的不满，特别是他的姑父吉彦武秀后面还
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1086%E5%B9%B4%20%E7%99%BD%E6%B2%B3%E5%A4%A9%E7%9A%87%E5%BC%80%E8%AE%BE%E9%99%A2%E6%94%BF%EF%BC%9A%E4%B8%8A%E6%89%BF%E6%91%84%E5%85%B3%EF%BC%8C%E4%B8%8B%E5%90%AF%E6%AD%A6%E5%AE%B6/" target="_self">
+          1086年 白河天皇开设院政：上承摄关，下启武家
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1086%E5%B9%B4%20%E7%99%BD%E6%B2%B3%E5%A4%A9%E7%9A%87%E5%BC%80%E8%AE%BE%E9%99%A2%E6%94%BF%EF%BC%9A%E4%B8%8A%E6%89%BF%E6%91%84%E5%85%B3%EF%BC%8C%E4%B8%8B%E5%90%AF%E6%AD%A6%E5%AE%B6/" target="_self">
+        <div>
+          藤原家族把手摄关政治很长的时间，本来通过联姻等手段巩固权力，但是后来藤原家族并没有诞下子嗣，这导致后来不得以让三条天皇继位。 三条天皇对藤原家族把握朝政飞扬跋扈的态度很不满意，同时也有很多其他家族的人也很是不满，可是三条天皇还没有大展宏图就很快去世了，继位的是白河天皇。 白河天皇继位没多久就主动退位成太上皇，建立了院政处理政事，实际上摄关政治只会影响到当政天皇的政令，但是不会影响到太上皇，这也是白
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1156%E5%B9%B4%20%E4%BF%9D%E5%85%83%E4%B9%8B%E4%B9%B1%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B9%8B%E4%B8%96%E7%9A%84%E5%BC%80%E5%90%AF/" target="_self">
+          1156年 保元之乱：武者之世的开启
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1156%E5%B9%B4%20%E4%BF%9D%E5%85%83%E4%B9%8B%E4%B9%B1%EF%BC%9A%E6%AD%A6%E8%80%85%E4%B9%8B%E4%B8%96%E7%9A%84%E5%BC%80%E5%90%AF/" target="_self">
+        <div>
+          白河法皇开辟了院政政治后，除了成为太上皇，还可以出家成为法皇，地位同样重要。他的后代基本也继承了他的这套院政体系。鸟羽天皇因为白河法皇让其让位给他的儿子崇德而心生不满，因此后来等白河法皇去世后，强迫崇德退位让位于自己的兄弟近卫天皇，然而近卫天皇去世太快，后经过推举选择了后白河继位于天皇。 崇德天皇对自己强迫禅让一事感到十分愤怒，于是暗中培养势力。形成了崇德派系，同样的后白河天皇也在培养自己的势力，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1159%E5%B9%B4%20%E5%B9%B3%E6%B2%BB%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%B0%81%E8%B5%8F%E4%B8%8D%E5%9D%87%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%94%BF%E5%8F%98/" target="_self">
+          1159年 平治之乱：封赏不均带来的政变
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1159%E5%B9%B4%20%E5%B9%B3%E6%B2%BB%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%B0%81%E8%B5%8F%E4%B8%8D%E5%9D%87%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%94%BF%E5%8F%98/" target="_self">
+        <div>
+          保元之乱结束后，后白河天皇却没有重用功劳最大的两个功臣，源义朝和平清盛，转而培养了自己的心腹藤原通宪，后世多称为信西（他的法号）。后白河天皇将希望兼并很多的新出现的庄园，因此请自己的亲信信西全权办理此事。 信西则专用自己的派系，这个时候他也需要武士阶级的支持于是选择了平清盛，重用了他给他加官进爵，然而源义朝却只得了一个左马头也就是牧场管理员，他心有不甘，于是后面联合藤原信赖，乘着平清盛外出参拜的间
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/9/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#board">8</a><a class="page-number" href="/page/9/#board">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/#board">11</a><a class="page-number" href="/page/12/#board">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/#board">29</a><a class="extend next" rel="next" href="/page/11/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

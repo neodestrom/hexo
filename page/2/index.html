@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Delightening">
+  <meta name="keywords" content="编程">
+  
+    <meta name="description" content="分享一些有关编程技术的内容">
+<meta property="og:type" content="website">
+<meta property="og:title" content="闪电技术分享">
+<meta property="og:url" content="https://chenhongjun.top/page/2/index.html">
+<meta property="og:site_name" content="闪电技术分享">
+<meta property="og:description" content="分享一些有关编程技术的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Delightening">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>闪电技术分享</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenhongjun.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>闪电技术分享</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/./img/homePage.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=" Delightening sharing"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1381%E5%B9%B4%20%E7%93%A6%E7%89%B9%C2%B7%E6%B3%B0%E5%8B%92%E8%B5%B7%E4%B9%89/" target="_self">
+          1381年 瓦特·泰勒起义
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1381%E5%B9%B4%20%E7%93%A6%E7%89%B9%C2%B7%E6%B3%B0%E5%8B%92%E8%B5%B7%E4%B9%89/" target="_self">
+        <div>
+          1348年到1350年黑死病杀死大量劳动力，并且英国为了维护贵族利益，出台了《劳工法案》规定农民工资维持到30年前水平，不准涨价。 此举激起了农民极度不满，当时还有个教会主张平等，这个时候瓦特泰勒就率领农民军起义，打着清君侧的名号，攻入伦敦想要国王铲除贪官。 年幼的国王查理二世躲进了伦敦塔，赶紧颁布敕令，废除了农奴制，并赦免了这次参加暴乱的人。但是农民军坚持杀死兰开斯特公爵和一些大臣，前者就是负责
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1385%E5%B9%B4%20%E4%B9%94%E5%8F%9F%E5%86%99%E4%BD%9C%E6%95%85%E4%BA%8B%E9%9B%86/" target="_self">
+          1385年 乔叟写作故事集
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1385%E5%B9%B4%20%E4%B9%94%E5%8F%9F%E5%86%99%E4%BD%9C%E6%95%85%E4%BA%8B%E9%9B%86/" target="_self">
+        <div>
+          乔叟是英王爱德华三世三王子的侍从，最开始再英法百年战争的时候，踏入欧洲大陆，但不幸被俘虏，被赎回后，由于爱德华欣赏起才能，他便代表爱德华四处出使欧洲，这个时间段了解到很多欧洲的故事，他把这些故事翻译成英文带回了英国。 他三十多岁后，成了管理员，再1385年还被选为骑士代表进了议会。 这个时候英国正处动荡时期，爱德华和他儿子相继去世，王族争夺王位，百年战争也暂时停止。 这个时候他就开始写作英国的本土
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1455%E5%B9%B4%20%E7%BA%A2%E7%99%BD%E7%8E%AB%E7%91%B0%E6%88%98%E4%BA%89/" target="_self">
+          1455年 红白玫瑰战争
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1455%E5%B9%B4%20%E7%BA%A2%E7%99%BD%E7%8E%AB%E7%91%B0%E6%88%98%E4%BA%89/" target="_self">
+        <div>
+          百年战争时期，英国贵族在战争中不断扩张权力，又因为兰开斯特家族亨利6世丢掉了英国在法国的大部分土地，导致其不得民心。 在此期间英国还有一个约克家族,由于兰开斯特家族的亨利6世本身精神不太正常，这就导致一直以来由约克家族的理查摄政。两家本身冲突不断，不过后来也通过议会同意由约克家族继承王位。 这个消息被亨利6世的王后玛格丽特知道了，她坚决捍卫他丈夫的王权，并集结了一波军队同约克家族作战，不过最初6年
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1533%E5%B9%B4%20%E5%AE%97%E6%95%99%E6%94%B9%E9%9D%A9/" target="_self">
+          1533年 宗教改革
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1533%E5%B9%B4%20%E5%AE%97%E6%95%99%E6%94%B9%E9%9D%A9/" target="_self">
+        <div>
+          16世纪前期，马丁路德在德国发表九十五条论纲，质疑天主教会的腐败，抗议天主教会，掀起了宗教改革。 但是英国并没有紧跟潮流，因为英国国王亨利八世想要发动战争拿回在法国的土地，为此想要得到教会的支持。不过，由于教会给的支持很少，但却在英国攫取了大量的财富，后来又因为亨利八世的王后凯瑟琳没有留下儿子，于是他想离婚另取。 但是并没有这么容易，他的王后凯瑟琳的娘家是哈布斯堡王室，势力庞大外甥还是当时西班牙国
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1562%E5%B9%B4%20%E9%9C%8D%E9%87%91%E6%96%AF%E7%9A%84%E9%BB%91%E5%A5%B4%E4%B9%B0%E5%8D%96/" target="_self">
+          1562年 霍金斯的黑奴买卖
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1562%E5%B9%B4%20%E9%9C%8D%E9%87%91%E6%96%AF%E7%9A%84%E9%BB%91%E5%A5%B4%E4%B9%B0%E5%8D%96/" target="_self">
+        <div>
+          1492年哥伦布穿过大西洋，发现美洲大陆，从此欧洲人向美洲殖民建立种植园，但是欧洲移民很少，当地土著因为疾病和屠杀数量也锐减，殖民者急需新的劳动力来源。 这个时候霍金斯发现贩卖黑奴有利可图，在1562年率领船队从英国出发，捕获了300多名黑人贩卖到中美洲，从此开启了黑奴三角贸易。 当时的英国刚经历了宗教改革，等把权力完全收回到国王手中的时候，发现已经错过了大航海殖民的好机会，只能找其他方式获取利益
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1571%E5%B9%B4%20%E8%8B%B1%E5%9B%BD%E5%9B%BD%E6%95%99%EF%BC%9A%E5%AE%89%E7%AB%8B%E7%94%98%E5%AE%97%E7%9A%84%E8%AF%9E%E7%94%9F/" target="_self">
+          1571年 英国国教：安立甘宗的诞生
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1571%E5%B9%B4%20%E8%8B%B1%E5%9B%BD%E5%9B%BD%E6%95%99%EF%BC%9A%E5%AE%89%E7%AB%8B%E7%94%98%E5%AE%97%E7%9A%84%E8%AF%9E%E7%94%9F/" target="_self">
+        <div>
+          英国经历了玫瑰战争后，贵族势力消失殆尽，现在能跟国王叫板的就只有教会势力。罗马教会，在英国渐渐的沦为了神职人员牟利的工具，这导致了人民和国王的不满，在之前1521年，剑桥成立了路德教研究的秘密团体，还将圣经翻译成了英文。 亨利八世见条件逐渐成熟，便着手清除教会势力，他的手段则是，该规矩，抢财产。先是改革了繁琐的基本仪式，简化了它，并且将英文版的圣经出版了；抢财产就是直接关停教会修道院，这些土地和财
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1580%E5%B9%B4%20%E6%B5%B7%E7%9B%97%E6%97%B6%E4%BB%A3%EF%BC%9A%E5%BE%B7%E9%9B%B7%E5%85%8B%E7%8E%AF%E6%B8%B8%E4%B8%96%E7%95%8C/" target="_self">
+          1580年 海盗时代：德雷克环游世界
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1580%E5%B9%B4%20%E6%B5%B7%E7%9B%97%E6%97%B6%E4%BB%A3%EF%BC%9A%E5%BE%B7%E9%9B%B7%E5%85%8B%E7%8E%AF%E6%B8%B8%E4%B8%96%E7%95%8C/" target="_self">
+        <div>
+          1519年，麦哲伦开始了环球航行，点燃了西方世界环游世界地热情，因为航行过程中往往能获得巨大的财富。 15世纪开始，伊斯兰世界控制着路上贸易道路，导致欧洲人从海路寻找贸易航线，其中西班牙人和葡萄牙人率先探险并控制着新大陆，后来者想要从新航线分一杯羹，就只能利用海盗活动，其中英国海盗最为出名。 其中最出名的英国海盗德雷克，在西班牙舰队里有龙的称号。德雷克后来想要去太平洋开辟新的殖民地。 他几乎先是到
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1588%E5%B9%B4%20%E5%A4%A7%E6%B5%B7%E6%88%98/" target="_self">
+          1588年 大海战
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1588%E5%B9%B4%20%E5%A4%A7%E6%B5%B7%E6%88%98/" target="_self">
+        <div>
+          苏格兰女王玛丽被处死后，西班牙借口英国要天主教国王上位发动了对英国的战争。 西班牙苦英国海盗久矣，并且自己统治的尼德兰因为新教叛乱，背后支持者就是英国，双方梁子早就结下。英国处死天主教玛丽，给了西班牙国王腓力二世借口。 1587年，德雷克带着小队，摸进西班牙的各个港口，阻扰军队集结。他发现西班牙舰队庞大坚固，但是笨重，他使用老战术，贴近地方战船跳上别人的战船上和敌人厮杀，靠着这种手段毁掉不少舰船的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1587%E5%B9%B4%20%E5%A5%B3%E7%8E%8B%E4%B9%8B%E4%BA%89%EF%BC%9A%E5%A4%84%E6%AD%BB%E8%8B%8F%E6%A0%BC%E5%85%B0%E7%8E%9B%E4%B8%BD%E5%A5%B3%E7%8E%8B/" target="_self">
+          1587年 女王之争：处死苏格兰玛丽女王
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1587%E5%B9%B4%20%E5%A5%B3%E7%8E%8B%E4%B9%8B%E4%BA%89%EF%BC%9A%E5%A4%84%E6%AD%BB%E8%8B%8F%E6%A0%BC%E5%85%B0%E7%8E%9B%E4%B8%BD%E5%A5%B3%E7%8E%8B/" target="_self">
+        <div>
+          玛丽是英格兰女王，信仰天主教，自己和法国国王通过婚有一些法国支持者，另外还是英国女王伊丽莎白的亲戚，有英国国王的继承权。 玛丽由于卷入到了政治纷争，被迫流亡到英国寻求庇护，英国女王由于没有别的好的处理方式，只好将其软禁起来。 英国伊丽莎白是新教徒，施行着比较宽松的宗教政策，这也导致了国内很多天主教徒的不满，而伊丽莎白无子嗣，大臣们很担心其死后由天主教徒的玛丽继位，回想起当初被血腥玛丽支配的恐怖。于
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1600%E5%B9%B4%20%E4%B8%9C%E5%8D%B0%E5%BA%A6%E5%85%AC%E5%8F%B8%E6%88%90%E7%AB%8B/" target="_self">
+          1600年 东印度公司成立
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1600%E5%B9%B4%20%E4%B8%9C%E5%8D%B0%E5%BA%A6%E5%85%AC%E5%8F%B8%E6%88%90%E7%AB%8B/" target="_self">
+        <div>
+          1600年，英国东印度公司得到女王伊丽莎白一世授予的皇家特许状，有了贸易垄断权。 第一次参加贸易的是海盗兰开斯特，经过半年航行到达东南亚的亚齐国，同国王进行贸易的时候发现该地贸易早就被葡萄牙人占了，进行贸易的时候葡萄牙人故意控制价格，高价卖给英国人，于是兰开斯特也抢劫葡萄牙人的商船，在亚齐甩卖货物。同时，和亚齐签订了优惠条约，答应同亚齐国王合作。靠着这样的贸易，1603年（历时两年半）回国后获得了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/#board">29</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

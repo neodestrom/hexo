@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Delightening">
+  <meta name="keywords" content="编程">
+  
+    <meta name="description" content="分享一些有关编程技术的内容">
+<meta property="og:type" content="website">
+<meta property="og:title" content="闪电技术分享">
+<meta property="og:url" content="https://chenhongjun.top/page/11/index.html">
+<meta property="og:site_name" content="闪电技术分享">
+<meta property="og:description" content="分享一些有关编程技术的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Delightening">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>闪电技术分享</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenhongjun.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>闪电技术分享</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/./img/homePage.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=" Delightening sharing"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1180%E5%B9%B4%20%E5%AF%8C%E5%A3%AB%E5%B7%9D%E4%B9%8B%E6%88%98%EF%BC%9A%E6%BA%90%E6%B0%8F%E7%9A%84%E7%BF%BB%E8%BA%AB%E4%B9%8B%E5%BD%B9/" target="_self">
+          1180年 富士川之战：源氏的翻身之役
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1180%E5%B9%B4%20%E5%AF%8C%E5%A3%AB%E5%B7%9D%E4%B9%8B%E6%88%98%EF%BC%9A%E6%BA%90%E6%B0%8F%E7%9A%84%E7%BF%BB%E8%BA%AB%E4%B9%8B%E5%BD%B9/" target="_self">
+        <div>
+          自平治之乱后，平清盛作为铲除叛军藤原信赖和源义朝的功臣，且本身势力也十分强大，因而平步青云飞黄腾达。 平治之乱结束后，他起初支持二条天皇，但是自己的妻子的妹妹和白河天皇撮合生下了高仓天皇后转而支持高仓天皇。随后等二条天皇死后，他和后白河上皇立高仓天皇为皇太子。 而后平清盛和后白河天皇进入了短暂的蜜月期，这个时候官位也一度达到了最高。但是后来平清盛的无休止扩张引起了后白河天皇的不满，因此趁着他的亲人
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1185%E5%B9%B4%20%E5%9D%9B%E6%B5%A6%E4%B9%8B%E6%88%98%EF%BC%9A%E5%B9%B3%E6%BA%90%E5%85%B4%E7%81%AD%E4%B9%8B%E6%88%98/" target="_self">
+          1185年 坛浦之战：平源兴灭之战
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1185%E5%B9%B4%20%E5%9D%9B%E6%B5%A6%E4%B9%8B%E6%88%98%EF%BC%9A%E5%B9%B3%E6%BA%90%E5%85%B4%E7%81%AD%E4%B9%8B%E6%88%98/" target="_self">
+        <div>
+          1185年源义经率军在屋岛击败平氏军队丢掉了濑户内海的地盘，平氏丧失了大量的兵员和地方家族的支持。 3月24日，源赖朝率领源氏军与平宗盛领导的平氏军在关门海峡的坛浦展开决战。决战双方平氏有500艘战船，源氏有840艘战船，源氏下令攻击舵手和水手以降低对手船只的机动性，并且依靠正面的潮流，撞击平氏的战船，或者冲上平氏的战船展开白刃战。 最终在这场战役中消灭了平氏的最后有生力量，最终源赖朝取代平清盛，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1190%E5%B9%B4%20%E6%BA%90%E8%B5%96%E6%9C%9D%E4%BB%BB%E5%BE%81%E5%A4%B7%E5%A4%A7%E5%B0%86%E5%86%9B%EF%BC%9A%E5%B9%95%E5%BA%9C%E6%94%BF%E6%9D%83%E7%9A%84%E5%BB%BA%E7%AB%8B/" target="_self">
+          1190年 源赖朝任征夷大将军：幕府政权的建立
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1190%E5%B9%B4%20%E6%BA%90%E8%B5%96%E6%9C%9D%E4%BB%BB%E5%BE%81%E5%A4%B7%E5%A4%A7%E5%B0%86%E5%86%9B%EF%BC%9A%E5%B9%95%E5%BA%9C%E6%94%BF%E6%9D%83%E7%9A%84%E5%BB%BA%E7%AB%8B/" target="_self">
+        <div>
+          源赖朝击败了平家后，被封为右近卫大将军。此后他登上了权力顶峰后，就在考虑如何获取到武士阶层的支持，因为他不想成为下一个平清盛。 因此他对于想要做官的武士，他卡住了人事，将这些人培养成自己的”御家人”，相当于自己的家臣，通过保证他们的土地，甚至让他们获取新的土地，笼络了不少武士阶层。 接下来他要面对的是后白河天皇，他希望将权力伸入到朝廷里，但是却又不想太过于张扬以至于落个源赖朝的下场。于是表面上装作
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1221%E5%B9%B4%20%E6%89%BF%E4%B9%85%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%A4%A9%E7%9A%87%E5%8F%91%E8%B5%B7%E7%9A%84%E8%B0%8B%E5%8F%8D/" target="_self">
+          1221年 承久之乱：天皇发起的谋反
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1221%E5%B9%B4%20%E6%89%BF%E4%B9%85%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%A4%A9%E7%9A%87%E5%8F%91%E8%B5%B7%E7%9A%84%E8%B0%8B%E5%8F%8D/" target="_self">
+        <div>
+          源赖朝去世后，继任者难以服众，引发不满和争斗。 在这个过程中源赖朝妻子北条政子那边家族北条时政，开始在斗争中取得优势，逐步铲除了源氏的势力，随后还扶植幕府将军。而后发现其不好控制，甚至杀了他。但也因此被迫退休，由儿子北条义时执政。 后鸟羽上皇看到幕府的争斗后，觉得有机可趁，便起兵讨伐北条义时，但是也只招募到1万多人，反之幕府这边19万人，兵分三路，很快就取得了胜利。随后流放了皇族，也是这个时候幕府
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1280%E5%B9%B4%20%E5%BC%98%E5%AE%89%E4%B9%8B%E5%BD%B9%EF%BC%9A%E9%95%B0%E4%BB%93%E5%B9%95%E5%BA%9C%E7%9A%84%E6%9C%80%E5%90%8E%E8%BE%89%E7%85%8C/" target="_self">
+          1280年 弘安之役：镰仓幕府的最后辉煌
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1280%E5%B9%B4%20%E5%BC%98%E5%AE%89%E4%B9%8B%E5%BD%B9%EF%BC%9A%E9%95%B0%E4%BB%93%E5%B9%95%E5%BA%9C%E7%9A%84%E6%9C%80%E5%90%8E%E8%BE%89%E7%85%8C/" target="_self">
+        <div>
+          1274年，文永之役中，元朝入侵日本失败，忽必烈在1280年8月，忽必烈召集群臣正式拟定对日的作战计划。此时的元帝国，已经灭亡了强敌南宋，获得了大批的降兵和战船，还有藩属国高句丽的协助，这次的对日作战可谓是势在必得。 元军为了保险起见，兵分两路，一路从朝鲜出发由忻都带领大概4万人，配置和部署和文永之役差不多。另外一路为江南军，从浙江出发，携带了很多农具和谷种工匠，做好了登录九州后稳扎稳打的准备。这
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1274%E5%B9%B4%20%E6%96%87%E6%B0%B8%E4%B9%8B%E5%BD%B9%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%88%8F%E5%89%A7%E6%80%A7%E7%9A%84%E8%83%9C%E5%88%A9/" target="_self">
+          1274年 文永之役：一次戏剧性的胜利
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1274%E5%B9%B4%20%E6%96%87%E6%B0%B8%E4%B9%8B%E5%BD%B9%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%88%8F%E5%89%A7%E6%80%A7%E7%9A%84%E8%83%9C%E5%88%A9/" target="_self">
+        <div>
+          1268年忽必烈向日本发出文书要求其臣服于蒙古，日本拒绝了。 1274年忽必烈出兵日本，忻都率领5000高句丽士兵，2万汉人士兵组成东路军东征日本。联军率先拿下周边岛屿，随后登陆到日本九州的福冈附近。 当时执政是北条家族，他们率领武士们层层阻击但也还是难以抵挡蒙古军队的攻势。 这个时候，忻都看到自己的部队深入敌军腹地，补给不便，且日军武士展现出了强大的抵抗精神，自己的副帅也因受伤而不得不退到船上，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1325%E5%B9%B4%20%E6%AD%A3%E4%B8%AD%E3%80%81%E5%85%83%E5%BC%98%E4%B9%8B%E5%8F%98%EF%BC%9A%E9%94%B2%E8%80%8C%E4%B8%8D%E8%88%8D%E7%9A%84%E5%80%92%E5%B9%95%E8%BF%90%E5%8A%A8/" target="_self">
+          1325年 正中、元弘之变：锲而不舍的倒幕运动
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1325%E5%B9%B4%20%E6%AD%A3%E4%B8%AD%E3%80%81%E5%85%83%E5%BC%98%E4%B9%8B%E5%8F%98%EF%BC%9A%E9%94%B2%E8%80%8C%E4%B8%8D%E8%88%8D%E7%9A%84%E5%80%92%E5%B9%95%E8%BF%90%E5%8A%A8/" target="_self">
+        <div>
+          后醍醐天皇因不满幕府把持天皇继承权，动了反叛的心思。 第一次联合了能臣日野俊基和日野资朝，打算趁武士去维持祭祀仪式治安的时候，直导京都。但是这个计划被泄露了，随后幕府立即查抄了倒幕骨干，后醍醐天皇屈尊解释此时无关才免于责罚，这就是正中之变。 随后后醍醐天皇韬光养晦等待下一次机会，它集结了原有旧部，以及动员了很多僧兵和恶党，准备很充分，但是1331年计划败露，倒幕骨干被逮捕，但未殃及后醍醐天皇。但是
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1333%E5%B9%B4%20%E5%BB%BA%E6%AD%A6%E6%96%B0%E6%94%BF%EF%BC%9A%E7%9A%87%E6%9D%83%E5%A4%8D%E5%85%B4%E7%9A%84%E5%A4%B1%E8%B4%A5%E5%B0%9D%E8%AF%95/" target="_self">
+          1333年 建武新政：皇权复兴的失败尝试
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1333%E5%B9%B4%20%E5%BB%BA%E6%AD%A6%E6%96%B0%E6%94%BF%EF%BC%9A%E7%9A%87%E6%9D%83%E5%A4%8D%E5%85%B4%E7%9A%84%E5%A4%B1%E8%B4%A5%E5%B0%9D%E8%AF%95/" target="_self">
+        <div>
+          灭亡镰仓幕府后，后醍醐天皇改国号为建武，论功行赏给了第一功臣足利高氏一个很高的架空官位，以及赐字的最高礼遇。但是，实际上足利高氏的权力相较于之前是有所缩小，这引发其不满。 后醍醐天皇随后进行的一系列改革，都围绕着收回土地展开进行，而根本问题是因为日本的土地兼并频繁，这个并没有得到解决，导致底层武士阶层的不满。还有一批本应该在对抗蒙古的战斗中奖赏的武士，也并没有得到奖赏，这也进一步导致这批武士的不满
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1335%E5%B9%B4%20%E5%BB%B6%E5%8E%9F%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%AE%A4%E7%94%BA%E5%B9%95%E5%BA%9C%E5%BB%BA%E7%AB%8B/" target="_self">
+          1335年 延原之乱：室町幕府建立
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1335%E5%B9%B4%20%E5%BB%B6%E5%8E%9F%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%AE%A4%E7%94%BA%E5%B9%95%E5%BA%9C%E5%BB%BA%E7%AB%8B/" target="_self">
+        <div>
+          由于后醍醐天皇并未能平衡好各方势力，进行了激进的改革，引发了武士阶层的再度叛乱。武士阶层进攻的方向是足利高氏所在的镰仓地区，理因由足利高氏出面镇压叛乱，但是后醍醐天皇忌惮其势力，因此派了别的人，但是足利高氏并未坐以待毙，自行出兵镇压叛乱，并很快镇压了叛乱。 回去后，在弟弟足利直义建议下，开始自行封赏功臣并在镰仓地区拥兵自重。这一行为被后醍醐天皇认定为叛乱，随即出兵讨伐他。 足利高氏一开始还是很怂的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1350%E5%B9%B4%20%E8%A7%82%E5%BA%94%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%AE%A4%E7%94%BA%E5%B9%95%E5%BA%9C%E7%9A%84%E5%86%85%E9%83%A8%E5%88%86%E8%A3%82/" target="_self">
+          1350年 观应之乱：室町幕府的内部分裂
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1350%E5%B9%B4%20%E8%A7%82%E5%BA%94%E4%B9%8B%E4%B9%B1%EF%BC%9A%E5%AE%A4%E7%94%BA%E5%B9%95%E5%BA%9C%E7%9A%84%E5%86%85%E9%83%A8%E5%88%86%E8%A3%82/" target="_self">
+        <div>
+          随着足利尊氏在战场上不断取得优势，击败了南朝的几位名将，室町幕府内部的危机开始浮出水面。 这个时候主政的直义派势力十分强大，由于当时南朝名将凋亡，后醍醐天皇去世，北朝重心转向内政。但是，随后不久南朝楠木进攻京都，足利尊氏派的高师直兄弟前去征讨，这一战促使北朝军队大破南朝首都吉野，足利尊氏的势力开始大大增强，直义派开始渐渐陷入劣势。 1349年直义受不了高氏兄弟，随即上书要求罢免他们。但是高氏兄弟先
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:49" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E6%97%A5%E6%9C%AC%E5%8F%B2/" class="category-chain-item">日本史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/10/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#board">9</a><a class="page-number" href="/page/10/#board">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/#board">12</a><a class="page-number" href="/page/13/#board">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/#board">29</a><a class="extend next" rel="next" href="/page/12/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

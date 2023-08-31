@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Delightening">
+  <meta name="keywords" content="编程">
+  
+    <meta name="description" content="分享一些有关编程技术的内容">
+<meta property="og:type" content="website">
+<meta property="og:title" content="闪电技术分享">
+<meta property="og:url" content="https://chenhongjun.top/page/7/index.html">
+<meta property="og:site_name" content="闪电技术分享">
+<meta property="og:description" content="分享一些有关编程技术的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Delightening">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>闪电技术分享</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenhongjun.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>闪电技术分享</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/./img/homePage.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=" Delightening sharing"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1851%E5%B9%B4%20%E4%B8%87%E5%9B%BD%E5%8D%9A%E8%A7%88%E4%BC%9A/" target="_self">
+          1851年 万国博览会
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1851%E5%B9%B4%20%E4%B8%87%E5%9B%BD%E5%8D%9A%E8%A7%88%E4%BC%9A/" target="_self">
+        <div>
+          随着英国工业革命的发展，英国国力得到空前提升，维多利亚女王的丈夫阿尔伯特亲王对科学十分推崇，在国内办了大大小小的博览会很多次，现在他想要邀请世界各国，办一次博览会。 首先是邀请了很多国家，随后成立皇家委员会筹款，然后说服反对派。最终还是在伦敦办成了。 此次博览会还邀请了其他世界各国14000万藏品，不过大多都是农业品，在英国工业品的衬托下，英国的工业品就是在秀肌肉，这也让其他世界各国看到了工业化的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1852%E5%B9%B4%20%E7%88%B1%E5%B0%94%E5%85%B0%E5%A4%A7%E9%A5%A5%E8%8D%92/" target="_self">
+          1852年 爱尔兰大饥荒
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1852%E5%B9%B4%20%E7%88%B1%E5%B0%94%E5%85%B0%E5%A4%A7%E9%A5%A5%E8%8D%92/" target="_self">
+        <div>
+          爱尔兰从1801同英国合并后，英国一直把爱尔兰当成殖民地来看待，发展自己的工业，倾销工业品使得爱尔兰手工业被摧毁。那么爱尔兰支柱的产业就只有农业了。同时，在爱尔兰的大部分土地被英国大地主占据了，爱尔兰人只能拿到很多支离破碎的小土地且环境恶劣，在这种情况下，只能种植适应性强的土豆了。在1845年-1852年爱尔兰农业产品中最主要的马铃薯，感染了真菌很快这种真菌感染了整个爱尔兰，导致爱尔兰农民颗粒无收
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1853%E5%B9%B4%20%E9%A6%96%E6%AC%A1%E7%8E%B0%E4%BB%A3%E6%88%98%E4%BA%89%EF%BC%9A%E5%85%8B%E9%87%8C%E7%B1%B3%E4%BA%9A%E6%88%98%E4%BA%89/" target="_self">
+          1853年 首次现代战争：克里米亚战争
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1853%E5%B9%B4%20%E9%A6%96%E6%AC%A1%E7%8E%B0%E4%BB%A3%E6%88%98%E4%BA%89%EF%BC%9A%E5%85%8B%E9%87%8C%E7%B1%B3%E4%BA%9A%E6%88%98%E4%BA%89/" target="_self">
+        <div>
+          7年战争后，欧洲签订了《维也纳条约》主要是维护的秩序稳定，防止出现一个过强的势力。而自那以后，俄国的实力大增，奥斯曼的势力则日渐衰微，俄国则将势力伸向巴尔干半岛对奥斯曼土耳其帝国宣战。起初英法希望通过谈判的手段和平解决冲突，但是随着奥斯曼在锡诺普海战中战败，导致海军全灭，英法开始商讨联合对俄罗斯宣战。在海军上面俄国打不过英法联军，但是在陆军上，英法的实力不如俄国，单是围攻一个塞瓦斯托波尔，就耗费了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1854%E5%B9%B4%20%E6%96%87%E5%AE%98%E5%88%B6%E5%BA%A6%E6%94%B9%E9%9D%A9/" target="_self">
+          1854年 文官制度改革
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1854%E5%B9%B4%20%E6%96%87%E5%AE%98%E5%88%B6%E5%BA%A6%E6%94%B9%E9%9D%A9/" target="_self">
+        <div>
+          英国经历过议会改革后，财力雄厚的人进入到议会，使议会的行政能力大幅提升，但是其中的底层行政官员，也就是公务员，还是由贵族指定的，也就是恩赐制导致行政效率低下且腐败。这种情况下，屈威廉以前在东印度公司干过，那里为了贸易盈利，采用了文官制度也就是考试，有能力的人才能当官，这种制度下的东印度公司的管理层行政能力远远高于英国的政府行政能力。当他回到了议会后，就一直想要推行这样的文官制度，不过阻力也很大，毕
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1857%E5%B9%B4%20%E5%8D%B0%E5%BA%A6%E6%B0%91%E6%97%8F%E5%A4%A7%E8%B5%B7%E4%B9%89/" target="_self">
+          1857年 印度民族大起义
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1857%E5%B9%B4%20%E5%8D%B0%E5%BA%A6%E6%B0%91%E6%97%8F%E5%A4%A7%E8%B5%B7%E4%B9%89/" target="_self">
+        <div>
+          1600年英国设立的东印度公司控制印度，通过分化王公贵族的方式逐步控制了整个印度，但是在推行西化政策的同时，和当地的文化宗教起了冲突。冲突的导火索是英国将涂有牛油的子弹发给了印度士兵，但是印度大部分信奉印度教或者伊斯兰教这两种宗教忌讳吃牛肉或者猪肉，再加之之前的种种区别对待，这导致这些印度雇佣兵打响了反对英国统治的第一枪。随后，各地掀起了起义运动，因为不满英国的统治政策的王宫贵族也有不少，他们害怕
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1859%E5%B9%B4%20%E7%89%A9%E7%A7%8D%E8%B5%B7%E6%BA%90/" target="_self">
+          1859年 物种起源
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1859%E5%B9%B4%20%E7%89%A9%E7%A7%8D%E8%B5%B7%E6%BA%90/" target="_self">
+        <div>
+          随着工业革命，科技发展，同时英国在海外建立了各类殖民地，人们前往世界各地变得更加容易，这就促使人们更加想要寻求博学知识。在这个背景下，达尔文前往世界各地环球考察世界各地，并写成了小册子，《一个博物学家的考察日志》。这份小册子被植物学家胡克看见，对其非常感兴趣，并且在去考察南极之前见了达尔文一面，考察结束后。回国后，更进一步和达尔文接触，两人突然发现都认识赖尔教授，并且在教授的帮助下整理了各类见闻，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1882%E5%B9%B4%20%E5%8D%A0%E9%A2%86%E5%9F%83%E5%8F%8A/" target="_self">
+          1882年 占领埃及
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1882%E5%B9%B4%20%E5%8D%A0%E9%A2%86%E5%9F%83%E5%8F%8A/" target="_self">
+        <div>
+          埃及在1875年爆发了财政危机，英国乘机买了苏伊士运河的股票，并同法国一同管理埃及，逐渐控制了埃及的经济。当时的英国首相格莱斯顿，并不满足现状，想要出兵占领埃及。随后，埃及爆发了民族运动，杀害了不少欧洲人，格莱斯顿以此为由，将军队派往到了埃及，明面上是为了维持苏伊士运河的稳定，但是此刻已经做好了出兵的准备。随后，埃及民族领袖奥拉比，为了防止意外，开始在岸边修筑炮台，这给了英国人借口，随后英军炮轰亚
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1899%E5%B9%B4%20%E6%89%A9%E5%BC%A0%E7%BB%88%E7%82%B9%EF%BC%9A%E5%B8%83%E5%B0%94%E6%88%98%E4%BA%89/" target="_self">
+          1899年 扩张终点：布尔战争
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1899%E5%B9%B4%20%E6%89%A9%E5%BC%A0%E7%BB%88%E7%82%B9%EF%BC%9A%E5%B8%83%E5%B0%94%E6%88%98%E4%BA%89/" target="_self">
+        <div>
+          1852年和1854年荷兰人在南非附近建立了德兰士瓦和奥兰治两个共和国，这个两个共和国成为英国殖民扩张的阻碍，因为阻碍了南北殖民地的链接。随后英国在1880年发动战争，将其纳入统治范围，这次战争被称为第一次布尔战争，布尔人承认英国女王为宗主，但还是保留了自治的地位。值得一提的是，布尔人并非非洲原住民，是荷兰的移民，他们很早移民至此发展出异于荷兰和本土的文化，同时战斗意志高昂，装备也好于原住民。随后
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1906%E5%B9%B4%20%E5%B7%A5%E5%85%9A%E5%B4%9B%E8%B5%B7/" target="_self">
+          1906年 工党崛起
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1906%E5%B9%B4%20%E5%B7%A5%E5%85%9A%E5%B4%9B%E8%B5%B7/" target="_self">
+        <div>
+          1906年工党成立，当时英国执政由两大党保守党和自由党轮流执政，它们是由传统的托利党和辉格党发展而来地，工党在这个局势下，抱自由党的大腿，在各种事务中支持自由党。特别是一次世界大战中，工党帮助劝说停止罢工，配合打仗，积极供应战略物资，这些行为赢得了民众和政府地信赖，曾两次加入到联合席位中，逐渐积累了执政经验。随后，工党因为不受重视，开始逐渐积累实力，最终成为了英国的第三大党派。在第二次世界大战后，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/31/1911%E5%B9%B4%20%E8%AE%AE%E4%BC%9A%E4%B8%A4%E9%99%A2%E5%9C%B0%E4%BD%8D%E9%80%86%E8%BD%AC/" target="_self">
+          1911年 议会两院地位逆转
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/31/1911%E5%B9%B4%20%E8%AE%AE%E4%BC%9A%E4%B8%A4%E9%99%A2%E5%9C%B0%E4%BD%8D%E9%80%86%E8%BD%AC/" target="_self">
+        <div>
+          英国传统上议会的权力是大于下议会的，因为上议会是贵族把持，下议会为普通平民把持。但是工业革命后，不少普通人发财致富进入到了下议会，提升了下议会的权力，但是还是无法跟上议会抗衡。后来1906年自由党当选的时候，由于自由党想要讨好工人阶层提升工人阶级的福利，但是提升福利需要钱，于是提出收富人的财产税，还有遗产税，这项法案《人民预算案》很快在下议院通过，但是一直被卡在上议院，两院因此一直争吵，到了下一次
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-31 10:50" pubdate>
+              2023-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%98%85%E8%AF%BB/" class="category-chain-item">阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/" class="category-chain-item">全历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/" class="category-chain-item">历史</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%98%85%E8%AF%BB/%E5%85%A8%E5%8E%86%E5%8F%B2/%E5%8E%86%E5%8F%B2/%E8%8B%B1%E5%9B%BD%E5%8F%B2/" class="category-chain-item">英国史</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/article/">#article</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/6/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/#board">8</a><a class="page-number" href="/page/9/#board">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/#board">29</a><a class="extend next" rel="next" href="/page/8/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

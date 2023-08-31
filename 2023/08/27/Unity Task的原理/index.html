@@ -1,0 +1,675 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Delightening">
+  <meta name="keywords" content="编程">
+  
+    <meta name="description" content="为什么有些原生的c# 异步方法使用await后可以被转化为Unitask而不是TaskUniTask 内部实现了一些扩展方法，能够将原有的C#异步的方法转化为Unitask。这是因为Unitask对于一些特定的继承自AysncOperation的类进行了扩展，然后实现了它们内部的GetAwaiter的方法，返回的是一个自定义的Awaiter struct。而这个Awaiter就可以高效率地使用Un">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity Task的原理">
+<meta property="og:url" content="https://chenhongjun.top/2023/08/27/Unity%20Task%E7%9A%84%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="闪电技术分享">
+<meta property="og:description" content="为什么有些原生的c# 异步方法使用await后可以被转化为Unitask而不是TaskUniTask 内部实现了一些扩展方法，能够将原有的C#异步的方法转化为Unitask。这是因为Unitask对于一些特定的继承自AysncOperation的类进行了扩展，然后实现了它们内部的GetAwaiter的方法，返回的是一个自定义的Awaiter struct。而这个Awaiter就可以高效率地使用Un">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-27T05:39:46.000Z">
+<meta property="article:modified_time" content="2023-08-31T02:53:09.532Z">
+<meta property="article:author" content="Delightening">
+<meta property="article:tag" content="article">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Unity Task的原理 - 闪电技术分享</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chenhongjun.top","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>闪电技术分享</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/./img/postPage.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Unity Task的原理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-27 13:39" pubdate>
+          2023年8月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          48 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Unity Task的原理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="为什么有些原生的c-异步方法使用await后可以被转化为Unitask而不是Task"><a href="#为什么有些原生的c-异步方法使用await后可以被转化为Unitask而不是Task" class="headerlink" title="为什么有些原生的c# 异步方法使用await后可以被转化为Unitask而不是Task"></a>为什么有些原生的c# 异步方法使用await后可以被转化为Unitask而不是Task</h2><p>UniTask 内部实现了一些扩展方法，能够将原有的C#异步的方法转化为Unitask。这是因为Unitask对于一些特定的继承自AysncOperation的类进行了扩展，然后实现了它们内部的GetAwaiter的方法，返回的是一个自定义的Awaiter struct。而这个Awaiter就可以高效率地使用UniTask的内部任务分配机制。</p>
+<h2 id="UniTask的-0GC原理"><a href="#UniTask的-0GC原理" class="headerlink" title="UniTask的 0GC原理"></a>UniTask的 0GC原理</h2><p>原始使用async 关键词所发生的事情：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-function">Task&lt;<span class="hljs-built_in">object</span>&gt; <span class="hljs-title">LoadAssetAsync</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> address</span>)</span>&#123;...&#125;<br><br><span class="hljs-comment">// 使用该方法</span><br><span class="hljs-keyword">var</span> cache = <span class="hljs-keyword">await</span> LoadAssetAsync(address)<br></code></pre></td></tr></table></figure>
+<p>上面使用await关键字的代码会被编译为下面的代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> awaiter = LoadAssetAsync(address).GetAwaiter();<br><span class="hljs-keyword">if</span>(awaiter.IsCompleted)&#123;<br>	cache = awaiter.GetResult();<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>	awaiter.UnsafeOnCompleted(moveNext);<br>	<span class="hljs-keyword">return</span> promise;<br>&#125;<br><span class="hljs-keyword">return</span> Task.FromResult(cache);<br></code></pre></td></tr></table></figure>
+<p>实际上await 关键字最终还是调用的实现了await关键字方法的GetAwait方法。<br>接着就是async编译后</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-comment">//</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> Task&lt;<span class="hljs-built_in">object</span>&gt; <span class="hljs-title">LoadAssetAsync</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> address</span>)</span><br>&#123;<br>	<span class="hljs-comment">// 内部生成一个状态机，不过该状态机是struct本身实例不会产生GC。</span><br>	<span class="hljs-keyword">var</span> stateMachine = <span class="hljs-keyword">new</span> __LoadAssetAsync<br>	&#123;<br>	    __this = <span class="hljs-keyword">this</span>,<br>	    address = address,<br>	    builder = AsyncTaskMethodBuilder&lt;<span class="hljs-built_in">object</span>&gt;.Create(),<br>	    state = <span class="hljs-number">-1</span><br>	&#125;;<br>	<span class="hljs-keyword">var</span> builder = stateMachine.builder;<br>    builder.Start(<span class="hljs-keyword">ref</span> stateMachine);<br>    <span class="hljs-keyword">return</span> stateMachine.builder.Task;<br>&#125;<br><span class="hljs-comment">// 实现IAsyncStateMachine这样一个接口这主要就是</span><br><span class="hljs-keyword">struct</span> __LoadAssetAsync : IAsyncStateMachine<br>&#123;<br>    <span class="hljs-comment">//</span><br>    <span class="hljs-keyword">public</span> Loader __this;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> address;<br><br>    <span class="hljs-comment">// internal state</span><br>    <span class="hljs-keyword">public</span> AsyncTaskMethodBuilder&lt;<span class="hljs-built_in">object</span>&gt; builder;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> state;<br><br>    <span class="hljs-comment">// internal local variables</span><br>    TaskAwaiter&lt;<span class="hljs-built_in">object</span>&gt; loadAssetAsyncAwaiter;<br>	<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MoveNext</span>()</span><br>    &#123;<br>        <span class="hljs-keyword">try</span><br>        &#123;<br>            <span class="hljs-keyword">switch</span> (state)<br>            &#123;<br>                <span class="hljs-comment">// initial(call from builder.Start)</span><br>                <span class="hljs-keyword">case</span> <span class="hljs-number">-1</span>:<br>                    <span class="hljs-keyword">if</span> (__this.cache != <span class="hljs-literal">null</span>)<br>                    &#123;<br>                        <span class="hljs-keyword">goto</span> RETURN;<br>                    &#125;<br>                    <span class="hljs-keyword">else</span><br>                    &#123;<br>                        <span class="hljs-comment">// await LoadAssetAsync(address)</span><br>                        loadAssetAsyncAwaiter = __this.LoadAssetAsync(address).GetAwaiter();<br>                        <span class="hljs-keyword">if</span> (loadAssetAsyncAwaiter.IsCompleted)<br>                        &#123;<br>                            <span class="hljs-keyword">goto</span> <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>;<br>                        &#125;<br>                        <span class="hljs-keyword">else</span><br>                        &#123;<br>                            state = <span class="hljs-number">0</span>;<br>                            builder.AwaitUnsafeOnCompleted(<span class="hljs-keyword">ref</span> loadAssetAsyncAwaiter, <span class="hljs-keyword">ref</span> <span class="hljs-keyword">this</span>);<br>                                <span class="hljs-keyword">return</span>; <span class="hljs-comment">// when call MoveNext again, goto case 0:</span><br>                            &#125;<br>                        &#125;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>                        __this.cache = loadAssetAsyncAwaiter.GetResult();<br>                        <span class="hljs-keyword">goto</span> RETURN;<br>                    <span class="hljs-literal">default</span>:<br>                        <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">catch</span> (Exception ex)<br>            &#123;<br>                state = <span class="hljs-number">-2</span>;<br>                builder.SetException(ex);<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br> <br>            RETURN:<br>            state = <span class="hljs-number">-2</span>;<br>            builder.SetResult(__this.cache);<br>        &#125;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetStateMachine</span>(<span class="hljs-params">IAsyncStateMachine stateMachine</span>)</span><br>        &#123;<br>            builder.SetStateMachine(stateMachine);<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的StateMachine方法，实际上本身是给builder进行调用的，builder决定状态机该如何切换。例如当IsCompelte为 true,则会立即调用GetResult方法得到结果，而如果为false 则会进入到builder等待方法中。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">struct</span> <span class="hljs-title">AsyncTaskMethodBuilder</span>&lt;<span class="hljs-title">TResult</span>&gt;</span><br>&#123;<br>    MoveNextRunner runner;<br>    Task&lt;TResult&gt; task;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-title">AsyncTaskMethodBuilder</span>&lt;<span class="hljs-title">TResult</span>&gt; <span class="hljs-title">Create</span>()</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">default</span>;<br>    &#125;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Start</span>&lt;<span class="hljs-title">TStateMachine</span>&gt;(<span class="hljs-params"><span class="hljs-keyword">ref</span> TStateMachine stateMachine</span>)</span><br><span class="hljs-function">        <span class="hljs-keyword">where</span> TStateMachine : IAsyncStateMachine</span><br>    &#123;<br>        <span class="hljs-comment">// when start, call stateMachine&#x27;s MoveNext directly.</span><br>        stateMachine.MoveNext();<br>    &#125;<br> <br>    <span class="hljs-keyword">public</span> Task&lt;TResult&gt; Task<br>    &#123;<br>        <span class="hljs-keyword">get</span><br>        &#123;<br>            <span class="hljs-keyword">if</span> (task == <span class="hljs-literal">null</span>)<br>            &#123;<br>                <span class="hljs-comment">// internal task creation(same as TaskCompletionSource but avoid tcs allocation)</span><br>                task = <span class="hljs-keyword">new</span> Task&lt;TResult&gt;();<br>            &#125;<br>            <span class="hljs-keyword">return</span> task.Task;<br>        &#125;<br>    &#125;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AwaitUnsafeOnCompleted</span>&lt;<span class="hljs-title">TAwaiter</span>, <span class="hljs-title">TStateMachine</span>&gt;(<span class="hljs-params"><span class="hljs-keyword">ref</span> TAwaiter awaiter, <span class="hljs-keyword">ref</span> TStateMachine stateMachine</span>)</span><br><span class="hljs-function">        <span class="hljs-keyword">where</span> TAwaiter : ICriticalNotifyCompletion</span><br><span class="hljs-function">        <span class="hljs-keyword">where</span> TStateMachine : IAsyncStateMachine</span><br>    &#123;<br>        <span class="hljs-comment">// at first await, copy struct state machine to heap(boxed).</span><br>        <span class="hljs-keyword">if</span> (runner == <span class="hljs-literal">null</span>)<br>        &#123;<br>            _ = Task; <span class="hljs-comment">// create TaskCompletionSource</span><br>            <span class="hljs-comment">// create runner</span><br>            runner = <span class="hljs-keyword">new</span> MoveNextRunner((IAsyncStateMachine)stateMachine); <span class="hljs-comment">// 这里有装箱成本</span><br>        &#125;<br>        <span class="hljs-comment">// set cached moveNext delegate(as continuation).</span><br>        awaiter.UnsafeOnCompleted(runner.CachedDelegate);<br>    &#125;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetResult</span>(<span class="hljs-params">TResult result</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (task == <span class="hljs-literal">null</span>)<br>        &#123;<br>            _ = Task; <span class="hljs-comment">// create Task</span><br>            task.TrySetResult(result); <span class="hljs-comment">// same as TaskCompletionSource.TrySetResult.</span><br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            task.TrySetResult(result);<br>        &#125;<br>    &#125;<br>&#125;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MoveNextRunner</span><br>&#123;<br>    <span class="hljs-keyword">public</span> Action CachedDelegate;<br> <br>    IAsyncStateMachine stateMachine;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MoveNextRunner</span>(<span class="hljs-params">IAsyncStateMachine stateMachine</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">this</span>.stateMachine = stateMachine;<br>        <span class="hljs-keyword">this</span>.CachedDelegate = Run; <span class="hljs-comment">// Create cached delegate.</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Run</span>()</span><br>    &#123;<br>        stateMachine.MoveNext();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>builder 的await方法创建了一个 runner类(这里也是开销),随后执行 awaiter的await 方法传入委托。awaiter的await方法本身基本上就只是执行了这个委托。<br>再来看这个委托，实际上执行的是MoveNextRunner的Run方法，而这个run方法实际上又指回MoveNext方法。所以说绕了一圈，实际执行过程是这样的。</p>
+<p>builder.Start() &#x3D;&gt; stateMachine.MoveNext() &#x3D;&gt; 成功返回&#x2F;失败执行 &#x3D;&gt; bulider.AwaitUnsafeOnCompleted &#x3D;&gt; stateMachine.MoveNext();</p>
+<p>这个过程会持续始终，直到Compelte的时候，将值设置成功后结束。</p>
+<p>可以看到原生的Task会产生不少的分配，例如runner类，执行的委托分配等等。<br>Unitask是如何解决这些分配的呢？ </p>
+<ol>
+<li>runner 对象用完后会放进对象池里，这里就避免了任务类回收，状态机相关的分配。</li>
+<li>状态机本身使用struct<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-comment">// Unitask的bulider</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">struct</span> AsyncUniTaskMethodBuilder&lt;T&gt;<br>&#123;<br>    IStateMachineRunnerPromise&lt;T&gt; runnerPromise;<br>    T result;<br>    <span class="hljs-keyword">public</span> UniTask&lt;T&gt; Task<br>    &#123;<br>        <span class="hljs-keyword">get</span><br>        &#123;<br>            <span class="hljs-comment">// when registered callback</span><br>            <span class="hljs-keyword">if</span> (runnerPromise != <span class="hljs-literal">null</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> runnerPromise.Task; <br>            &#125;<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                <span class="hljs-comment">// sync complete, return struct wrapped result</span><br>                <span class="hljs-keyword">return</span> UniTask.FromResult(result);<br>            &#125;<br>        &#125;<br>    &#125;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AwaitUnsafeOnCompleted</span>&lt;<span class="hljs-title">TAwaiter</span>, <span class="hljs-title">TStateMachine</span>&gt;(<span class="hljs-params"><span class="hljs-keyword">ref</span> TAwaiter awaiter, <span class="hljs-keyword">ref</span> TStateMachine stateMachine</span>)</span><br><span class="hljs-function">        <span class="hljs-keyword">where</span> TAwaiter : ICriticalNotifyCompletion</span><br><span class="hljs-function">        <span class="hljs-keyword">where</span> TStateMachine : IAsyncStateMachine</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (runnerPromise == <span class="hljs-literal">null</span>)<br>        &#123;<br>            <span class="hljs-comment">// get Promise/StateMachineRunner from object pool</span><br>            AsyncUniTask&lt;TStateMachine, T&gt;.SetStateMachine(<span class="hljs-keyword">ref</span> stateMachine, <span class="hljs-keyword">ref</span> runnerPromise);<br>        &#125;<br> <br>        awaiter.UnsafeOnCompleted(runnerPromise.MoveNext);<br>    &#125;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetResult</span>(<span class="hljs-params">T result</span>)</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (runnerPromise == <span class="hljs-literal">null</span>)<br>        &#123;<br>            <span class="hljs-keyword">this</span>.result = result;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-comment">// SetResult signal Task continuation, it will call task.GetResult and finally return to pool self.</span><br>            runnerPromise.SetResult(result);<br> <br>            <span class="hljs-comment">// AsyncUniTask&lt;TStateMachine, T&gt;.GetResult</span><br>            <span class="hljs-comment">/*</span><br><span class="hljs-comment">            try</span><br><span class="hljs-comment">            &#123;</span><br><span class="hljs-comment">                return core.GetResult(token);</span><br><span class="hljs-comment">            &#125;</span><br><span class="hljs-comment">            finally</span><br><span class="hljs-comment">            &#123;</span><br><span class="hljs-comment">                TryReturn();</span><br><span class="hljs-comment">            &#125;</span><br><span class="hljs-comment">            */</span><br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="category-chain-item">计算机</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Game/" class="category-chain-item">Game</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Game/%E6%A1%86%E6%9E%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="category-chain-item">框架源码分析</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Game/%E6%A1%86%E6%9E%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Unitask/" class="category-chain-item">Unitask</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/article/">#article</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Unity Task的原理</div>
+      <div>https://chenhongjun.top/2023/08/27/Unity Task的原理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Delightening</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月27日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/30/SpringAOP%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%BF%E7%94%A8/" title="SpringAOP的基本概念和使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SpringAOP的基本概念和使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/27/Unitask%20%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Unitask 的使用">
+                        <span class="hidden-mobile">Unitask 的使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
