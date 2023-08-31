@@ -6,7 +6,7 @@ tags: article
 ---
 
 ### 简介
-pepermint 是一款Unity的UGUI数据绑定框架，这款插件采用了[[MVVM模式]]，实现了数据和视图的绑定。
+pepermint 是一款Unity的UGUI数据绑定框架，这款插件采用了{% post_link = MVVM模式 %}，实现了数据和视图的绑定。
 这款插件具有以下特点：
 1.  简洁的代码
 Peppermint 数据绑定基于属性和反射。该类不需要从指定的类或接口继承，任何具有属性的对象都可以用作绑定源或绑定目标。现有代码只需进行最少的更改即可支持数据绑定
@@ -21,7 +21,7 @@ Peppermint 数据绑定旨在简化使用 MVVM 模式构建游戏 UI。应用程
 ### 使用
 跟其他的MVVM框架一样， pepermint 的使用也是将 视图 和 逻辑分开的，因此需要对视图和逻辑分别进行设置。
 #### 视图操作
-视图需要绑定一个[[数据源]] ，绑定方法是在视图的根组件上添加 `DataRegister`  和 `DataContext` 组件，其中DataRegister中需要填写数据源的名称，该名称将会在Source中进行定义。
+视图需要绑定一个{% post_link = 计算机/Game/框架源码分析/PeperMint/数据源 %} ，绑定方法是在视图的根组件上添加 `DataRegister`  和 `DataContext` 组件，其中DataRegister中需要填写数据源的名称，该名称将会在Source中进行定义。
 绑定了数据源后，即可使用数据源中的数据内容。对于基本的数据内容，pepermint提供了 `TextBinder` 用于绑定文本，`ButtonBinder` 用于绑定按钮的点击事件， `imageBinder` 用于绑定Image Sprite等等。
 
 

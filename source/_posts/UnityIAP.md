@@ -16,7 +16,6 @@ Unity IAP系统是一个内购插件，由Unity官方开发，目前支持Google
 public class MyIapStoreListener:IStoreListener {
 	public MyIapStoreListener(){
 		// 必须先初始化
-		
 		//这个是默认的模块，规定了当前平台等信息
 		StandardPurchasingModule module = StandardPurchasingModule.Instance();
 		//这个提供了部分供开发者使用的公共配置，并保留上面的模块

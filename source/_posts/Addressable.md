@@ -47,13 +47,7 @@ if (AddressableAssetSettingsDefaultObject.Settings == null)
 //参数说明 组名，设置默认组，只可读，发送修改事件，用于复制的schema原型 ，类型
 // 默认情况下像下面这样即可创建组。
 AddressableAssetGroupTemplate groupTemplate = settings.GetGroupTemplateObject(0) as AddressableAssetGroupTemplate;
-var cus_group = settings.CreateGroup("groupName",
-									 false,
-									 false,
-									 false,
-									 null,
-									 groupTemplate.getTypes()
-									 )
+var cus_group = settings.CreateGroup("groupName",false,false,false,null,groupTemplate.getTypes())
 ```
 
 2. 资源加入资源组
@@ -75,19 +69,8 @@ entity.SetLabel("LabelName",true,true);
 AddressableAssetSettings.BuildPlayerContent();
 ```
 
-
-
-## Addressable 的原理
-addressable 作为一个资源加载框架，最外层 Adressable 类是一个中介类，提供公共方法给用户使用，包括一些加载资源的方法等。
-前期准备核心原理集中在 AddressableAssetSettings 里面，该类负责前期的资源组创建。
-使用的核心原理集中在Addressables 的Load方法里面，使用前面创建的信息，合理加载到各类资源。 [[Addressable 的加载资源原理]]
-
-
-
-
-
-
-
+## Addressable深入理解
+Addressable框架本质上是对原有的AssetBundle系统进行了一层封装，解决了原来的AssetBunndle系统令人头疼的资源定位问题，这种资源可以是放在网上，也可以是放在本地。关于资源加载逻辑{% post_link = Addressable 的加载资源原理 %}。
 
 
 
